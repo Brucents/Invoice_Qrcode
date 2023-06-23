@@ -29,7 +29,7 @@ def pdf_invoice(pdf_path):
     headers = ['序号', '发票代码', '发票号码', '不含税金额', '开票日期', '校验码']
     sheet.append(headers)
 
-    row = 2
+    row = 2  # 第一列为标题 从第二列开始
     for page_num in range(len(reader.pages)):  # 遍历 PDF 页面
         page = reader.pages[page_num]  # 获取当前页面
         for image_object in page.images:  # 单张页面存在多张图像的情况 遍历出来
@@ -51,6 +51,5 @@ if __name__ == '__main__':
     with open("img.png", "rb") as image_file:
         image_data = image_file.read()
         print(invoice_decode_qrcode(image_data))
-
 
     pdf_invoice("ht.pdf")
