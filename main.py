@@ -48,9 +48,9 @@ def pdf_invoice(pdf_path):
 
 
 if __name__ == '__main__':
-    # with open("img_1.png", "rb") as image_file:
-    #     image_data = image_file.read()
-    #     # image_data = io.BytesIO(image_data)
-    #     invoice_decode_qrcode(image_data)
+    with open("img.png", "rb") as image_file:
+        image_data = image_file.read()
+        print(invoice_decode_qrcode(image_data))
+
 
     pdf_invoice("ht.pdf")
